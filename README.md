@@ -5,4 +5,4 @@ Advanced Encryption Decryption Tool
 ![](Capture.PNG)
 
 
-![](Capture2.PNG)
+![](Capture2.jpg)
