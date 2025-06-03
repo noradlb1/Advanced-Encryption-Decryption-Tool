@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Encryption Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="code-gen-buttons">
+            <button onclick="generateCode('vbnet')"><i class="fab fa-microsoft"></i> VB.NET</button>
+            <button onclick="generateCode('csharp')"><i class="fas fa-code"></i> C#</button>
+            <button onclick="analyzeCipher()"><i class="fas fa-search"></i> Encryption Analysis</button>
+        </div>
+    </div>
+
+    <div class="crypto-container">
+        <h1><i class="fas fa-lock"></i> Advanced Encryption / Decryption Tool</h1>
+        
+        <div class="input-group">
+            <textarea id="inputText" placeholder="Enter the text here..."></textarea>
+            <div class="actions">
+                <button onclick="encrypt()" class="btn-encrypt"><i class="fas fa-lock"></i> Encryption</button>
+                <button onclick="decrypt()" class="btn-decrypt"><i class="fas fa-unlock"></i> Decryption</button>
+            </div>
+            <textarea id="outputText" placeholder="The result will appear here..." readonly></textarea>
+        </div>
+
+        <div class="settings">
+            <select id="method">
+                <option value="base64">Base64</option>
+                <option value="caesar">Caesar (Shift 3)</option>
+                <option value="xor">XOR (Key 7)</option>
+                <option value="rot13">ROT13</option>
+                <option value="reverse">Reverse Text</option>
+                <option value="hex">Hexadecimal</option>
+                <option value="url">URL Encoding</option>
+                <option value="atbash">Atbash Cipher</option>
+                <option value="bcrypt">Bcrypt Hashing</option>
+                <option value="sha256">SHA-256 Hashing</option>
+                <option value="rc4">RC4 Encryption</option>
+                <option value="vigenere">Vigenère Cipher</option>
+                <option value="bat">BAT Obfuscation</option>
+            </select>
+            
+            <div class="key-input" id="keyContainer" style="display:none;">
+                <input type="text" id="cipherKey" placeholder="Enter the key...">
+            </div>
+
+            <div class="advanced-options">
+                <button onclick="toggleMode('advanced')"><i class="fas fa-cogs"></i> Advanced Options</button>
+                <button onclick="copyResult()"><i class="fas fa-copy"></i> Copy Result</button>
+                <button onclick="clearAll()"><i class="fas fa-trash"></i> Clear All</button>
+            </div>
+        </div>
+
+        <div id="analysisResult" class="analysis-result"></div>
+        <div id="codeOutput" class="code-output"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
